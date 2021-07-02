@@ -1,24 +1,26 @@
 package co.yedam.prj.member.serviceImpl;
 
+import org.apache.ibatis.session.SqlSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
-import co.yedam.prj.member.map.MemberMapper;
+
+
 import co.yedam.prj.member.service.MemberService;
 import co.yedam.prj.member.vo.MemberVO;
-@Service
-@Repository("memberDao")
+
+@Repository
 public class MemberServiceImpl implements MemberService {
 
-	@Autowired(required=true)
-	MemberMapper map;
+	@Autowired
+	SqlSession session;
 	
 	@Override
-	public MemberVO memberLogin(MemberVO vo) {
+	public MemberVO login(MemberVO vo) {
 
-		return map.memberLogin(vo);
+		return session.selectOne("login",vo);
 	}
 
 }

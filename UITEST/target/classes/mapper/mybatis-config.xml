@@ -6,7 +6,5 @@
 <configuration>
 	<!-- 필요한 환경변수, 또는 전역변수, 또는 타입알리아스 를 설정 -->
 	
-		<typeAliases> 
-			<typeAlias type="com.yedam.prj.member.vo.MemberVO" alias="MemberVO"/>
-		</typeAliases>
+	
 </configuration>

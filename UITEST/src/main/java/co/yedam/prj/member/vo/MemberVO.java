@@ -4,6 +4,12 @@ package co.yedam.prj.member.vo;
 public class MemberVO {
 	private String id;
 	private String password;
+	
+	
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", password=" + password + "]";
+	}
 	public String getId() {
 		return id;
 	}

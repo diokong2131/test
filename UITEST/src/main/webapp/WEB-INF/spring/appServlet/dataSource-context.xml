@@ -15,13 +15,13 @@
 	
 	<!-- mybatis -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:mapper/mybatis-config.xml" />
-		<property name="mapperLocations" value="classpath*:com/yedam/prj/**/*-map.xml" />
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:mapper/mybatis-config.xml"></property><!-- src/main/resource -->
+		<property name="mapperLocations" value="classpath*:co/yedam/prj/**/*-map.xml"></property>
 	</bean>
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlSessionFactory"/>
+		<constructor-arg ref = "sqlSessionFactory"></constructor-arg>
 	</bean>
 
 	<mybatis-spring:scan base-package="com.yedam.prj"/>
